@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const CONFIG_FILE = path.resolve(__dirname, "user-config.json");
+const CONFIG_FILE = path.join(process.cwd(), 'user-config.json');
 
 type Config =
   | "togglApiToken"
