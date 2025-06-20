@@ -1,0 +1,20 @@
+{
+  "togglApiToken": "",
+  "tempoApiToken": "",
+  "tempoAuthorAccountId": "",
+  "tempoProjectAccountMap": {},
+  "roundingEnabled": true,
+  "roundProjectStrategy": "blacklist",
+  "roundProjectBlacklist": [],
+  "roundProjectWhitelist": [],
+  "roundTo": 5,
+  "roundUpThreshold": 1,
+  "roundDownThreshold": 1,
+  "minEntryTime": 0,
+  "useAccounts": false,
+  "accountKey": "",
+  "jiraUrl": "",
+  "jiraApiToken": "",
+  "jiraEmail": "",
+  "remainingEstimateStrategy": "auto"
+}
