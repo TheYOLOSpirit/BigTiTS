@@ -511,10 +511,13 @@ const cmdCheckTogglRunningTimer = async () => {
 const cmdFetchTogglEntries = async (date: moment.Moment) => {
   logger.info(`Fetching Toggl time entries for ${date.format("YYYY-MM-DD")}`);
 
+  const dateStart = date.startOf("day").toISOString(true)
+  const dateEnd = date.startOf("day").add(1, "day").toISOString(true)
+
   // Fetch Toggl time entries
   const togglEntries = await fetchTogglTimeEntries({
-    startDate: date.format("YYYY-MM-DD"),
-    endDate: moment(date).add(1, "day").format("YYYY-MM-DD"),
+    startDate: dateStart,
+    endDate: dateEnd,
   });
 
   if (!togglEntries.length) {
