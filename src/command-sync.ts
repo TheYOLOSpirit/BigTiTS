@@ -187,12 +187,11 @@ const commandSync = async (argv: SyncCommandArgs) => {
             logger.info(chalk.grey(`Skipped rounding for ${nicename}`));
           }
         }
-      }
+        duration = cmdFloorToNearestMinute(duration);
 
-      duration = cmdFloorToNearestMinute(duration);
-
-      if (shouldRoundUpMinEntryTime) {
-        duration = cmdCeilToMinEntryTime(duration, roundingMinEntryTime);
+        if (shouldRoundUpMinEntryTime) {
+          duration = cmdCeilToMinEntryTime(duration, roundingMinEntryTime);
+        }
       }
 
       differenceAfterRounding += duration - entry.duration;
