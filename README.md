@@ -13,14 +13,15 @@ TiTS is a Command Line Interface (CLI) written in TypeScript that helps you mana
 - Asks if you want to round to ~~15~~ 5 minute intervals (value can be changed).
 - Can auto round to nearest interval at specified thresholds.
 - Supports black- or whitelist for auto rounding or skipping for certain projects.
-- [NEW] Delete command for deleting worklogs for a provided date
+- Show command for showing current worklogs in Tempo
+- Delete command for deleting worklogs for a provided date
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/en/) must be installed on your machine.
 - An API key for Toggl and an API key and Author ID from Tempo. You can obtain them from the respective websites.
 
-## Installation
+## Installation/update
 
 Clone the repository
 
@@ -69,6 +70,16 @@ tits sync -d yesterday
 ```
 
 The first time you run the sync command you will be prompted for Toggl/Tempo credentials if you haven't already entered them.
+
+### Show worklogs
+
+To show worklogs for a specific day, run the `show` command.
+
+```bash
+tits show
+# or tits show -d yesterday
+# or tits show -d 2025-09-16
+```
 
 ### Delete/scrub worklogs
 
