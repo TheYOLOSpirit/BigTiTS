@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "rootDir": "src",
-    "outDir": "dist",
+    "module": "nodenext",
+    "target": "es2024",
+    "rootDir": "./src/",
+    "outDir": "./dist/",
     "strict": true,
-    "target": "es6",
-    "module": "commonjs",
-    "sourceMap": true,
     "esModuleInterop": true,
-    "moduleResolution": "node"
+    "skipLibCheck": true,
+    "moduleResolution": "node16",
+    "lib": ["es2024"]
   }
 }
