@@ -8,13 +8,13 @@ export const ISSUE_KEY_REGEX = /^[A-Z0-9]+-[0-9]+/; // e.g. ABC-123 or AB2-123
 export async function getIssueKey(
   timeEntry: TogglTimeEntry
 ): Promise<IssueKey> {
-  let issueKey = extractIssueKeyFromDescription(timeEntry.description);
+  let issueKey: IssueKey|undefined = extractIssueKeyFromDescription(timeEntry.description);
 
   if (!issueKey) {
     issueKey = null; // TODO: Handle extraction of issue key from project name
   }
 
-  if (!issueKey) {
+  /*if (!issueKey) {
     logger.error(chalk.red(`Missing issue key: ${timeEntry.description}`));
     try {
       issueKey = await prompt(
@@ -29,13 +29,13 @@ export async function getIssueKey(
       logger.error(chalk.red(error));
       return null;
     }
-  }
+  }*/
 
-  issueKey = issueKey.toUpperCase();
+  issueKey = issueKey?.toUpperCase();
 
-  const issueKeyIsValid = validateIssueKey(issueKey);
+  const issueKeyIsValid = issueKey ? validateIssueKey(issueKey) : null;
 
-  return issueKeyIsValid ? issueKey : null;
+  return issueKeyIsValid ? issueKey! : null;
 }
 
 export const getIssueDescription = async (

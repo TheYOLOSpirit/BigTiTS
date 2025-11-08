@@ -116,6 +116,7 @@ const commandDelete = async (argv: DeleteCommandArgs) => {
     console.log("");
 
     // Prompt for confirmation
+    /*
     const confirmDelete = await prompt(
       chalk.red.bold("Are you sure you want to delete these worklogs? (y/n): "),
       (input: string) => ["y", "n", ""].includes(input.toLowerCase()),
@@ -128,7 +129,7 @@ const commandDelete = async (argv: DeleteCommandArgs) => {
     if (confirmDelete !== "y") {
       logger.info(chalk.green("Deletion cancelled"));
       return;
-    }
+    }*/
 
     // Delete worklogs in parallel
     logger.info(
