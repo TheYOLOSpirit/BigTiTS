@@ -3,3 +3,5 @@
       build: .
       container_name: big-tits
       restart: unless-stopped
+      environment:
+          TZ: "America/Montreal"
